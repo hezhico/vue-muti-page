@@ -62,8 +62,8 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "iOS >= 8",
+    "Firefox >= 20",
+    "Android > 4.0"
   ]
 }
