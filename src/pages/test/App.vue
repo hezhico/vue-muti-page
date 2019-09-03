@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <div aspectratio>1111111</div>
     <Banner></Banner>
     <router-view></router-view>
   </div>

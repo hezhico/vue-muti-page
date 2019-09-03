@@ -3,6 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import http from '@/axios/api'
+import '@/mock/mock.js'
+
+Vue.use(http) // 全局注册自定义api
 
 Vue.config.productionTip = false
 
@@ -13,6 +17,10 @@ if (location.hostname === 'localhost') {
   const http = window.location.protocol + '//' + location.hostname 
   Vue.prototype.HTTPLOCAT = http + '/dist' // http + '/dist/test.html'
 }
+// 输出打包全局变量
+console.log('全局配置文件init')
+console.log(config)
+console.log('全局配置文件end')
 
 /* eslint-disable no-new */
 new Vue({

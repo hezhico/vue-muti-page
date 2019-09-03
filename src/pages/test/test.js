@@ -13,6 +13,10 @@ if (location.hostname === 'localhost') {
   const http = window.location.protocol + '//' + location.hostname 
   Vue.prototype.HTTPLOCAT = http + '/dist' // http + '/dist/test.html'
 }
+// 输出打包全局变量
+console.log('test-全局配置文件init')
+console.log(config)
+console.log('test-全局配置文件end')
 
 /* eslint-disable no-new */
 new Vue({
