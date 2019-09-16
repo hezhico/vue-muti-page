@@ -14,15 +14,23 @@ export default {
     })
   },
   methods: {
-    login() {
-      let params = {
+    async login() {
+      let params1 = {
         url: config.base + "/login",
       }
-      this.$http(params).then((res)=>{
-        console.log(res)
-        if(res.code=== '00') {
-          alert('succ' + res.msg)
-        }
+
+      let params2 = {
+        url: config.base + "/getToekn",
+      }
+      
+      let res1 = await this.$http(params1);
+      let res2 = await this.$http(params2);
+      
+      Promise.all([res1, res2]).then((result) => {
+        console.log(result)
+        //  同一个页面 多个请求， 全局loading 取消的策略， 利用Promise.all
+      }).catch((error) => {
+        console.log(error)
       })
     }
   },
